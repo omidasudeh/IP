@@ -1,0 +1,139 @@
+=================  practice interview gainlo with google engineer $170
+Minimal test suite
+We have a test suite of N test cases (indexed 1...N) that exercises some java file F that has M lines.
+
+function run_test(i)
+Input:    i, an integer representing the index of the test case we want to run
+Output: list of integers representing the lines of code exercised in file F.
+
+Given the function run_test, determine the minimum set of test cases we need to keep in order to make sure every line in F is exercised at least once.
+
+Example:
+Input:
+M = 5 (file F has 5 lines of code).
+N = 4 (we have 4 test cases)
+run_tes(1) => [1, 2, 3] =>[13]
+run_testt(2) => [2, 4] => [24]
+run_test(3) => [3, 4]
+run_test(4) => [4, 5]
+
+Output: [1, 4]
+This is because we only need test case #1 and #4 to exercise every line of code in F (lines 1, 2, 3, 4, 5).
+
+--
+
+(along the way, keep track of the smallest combination)
+for every combination of test cases // O(2^N)
+    test of that combination covers the whole file // O(merging sorted lists)
+    
+
+[1,3]
+[2,4]
+[3,4]
+[4-5]
+// hey, you got disconnected from hangouts
+ok let me call back
+https://hangouts.google.com/call/qgIy12WyqQnNEGEGVskpAAEE
+or do you prefer phonecall?6504849044 would you call me?
+vector<int> testcases(vector<vector<int>> test_cases)
+{
+unordered_set<int> visited;
+    vector<int> result;// touched testcases
+    int i = 0;
+for(auto tc: testcases)// tc is a vector of touched lines in the file
+{
+    results.push_back(i);
+    for(auto t: tc)
+{
+    if(visitested.find(t)!=visited.end())//if some emelement in a a test case is not visited
+        visited.insert(t);
+    //if(all lines are touched)
+    if(visited.size()==file.line_number)
+        return result;
+}
+
+
+}
+} n testcases and each has O(m) lines touched; o(m*n) space O(l) l is the number of the lines    
+
+
+
+-----
+
+example where we need all test cases
+1=>[1]
+2=>[2]
+3=>[3]
+4=>[4,5] 
+
+M: 8
+N=5
+run_test(1) => [1,2,3,4,5]
+run_test(2) => [2,4,6,8]
+run_test(3) => [1,3,5,7]
+run_test(4) => [6,7]
+run_test(5) => [8]
+===
+make all the permutations of the testcases and check if each permutation touches all the lines and from those that touches all the lines return the smallest length permutation.
+X1 X2 .. Xk 
+Xi: 
+################################# Actual first phone interview ##############################################
+
+Please use this Google doc to code during your interview. To free your hands for coding, we recommend that you use a headset or a phone with speaker option.
+
+My pleasure to meet you!:)
+
+Implement a class to mimic a key-value based memcache with limited life span. 
+
+Constructor: 
+  Memcache(int ttl); 
+ // ttl stands for time to live in second.
+Methods:
+  void Set(string key, int value, int ts); 
+// ts is the current timestamp we we set.
+  bool Get(string key, int ts, int *value); 
+// ts is the current timestamp we we get the key.
+
+Memcache *m = new Memcache(2);
+m->Set(/*key = */ “a”, /*value = */ 1, /*ts = */ 1);  // On time = 1, we set key pair <”a”, 1> into m
+m->Get(/*key = */ “a”, /*ts = */ 2, &value); // On time = 2, we want to get the value by given the key “a”
+value = 1 
+
+m->Get(/*key = */ “a”, /*ts = */ 4, &value);  //  On time = 4, the value expire already when ts = 3. 
+
+class  Memcache{
+private:
+    unordered_map<int, pair<int,int>> container;// <key, <value, ts>>
+    int TTL;
+public:
+
+ Memcache(int ttl = 0)
+{
+    int TTL = ttl;    
+}
+void Set(string key, int value, int ts)
+{
+    pair<int, int> t = {value, ts};//  check syntaxs
+container[key] = t;
+}
+bool Get(string key, int ts, int *value)
+{
+    if(container.count(key)>0)
+    {
+        pair<int, int> t = container[key];//<value,ts>
+        //check if it is a valid value
+        if(t.second + TTL < ts )// it is a valid value
+        {
+            *value =t.first; 
+            return true;
+}
+*value =t.first; // value is not valid 
+return false;
+}
+}
+};
+
+
+map
+
+

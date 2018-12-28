@@ -1,0 +1,4 @@
+/*
+1. instantiate a heap
+2. delete min
+*/

@@ -1,7 +1,9 @@
 /*
-x 1. instantiate a Q
-X 2. add to front of the Q
-X 3. insert to full Q
-X 4. delete from the end of the Q
-X 5. remove from empty Q
+    // 0. Expect length_error exception if 0 size stack instantiated
+    // 1. can instantiate stack
+    // 2. can push to stack
+    // 3. Expect overflow exception if push to full    
+    // 4. can peek,pop from stack
+    // 5. Expect reverse order here    
+    // 6. Expect underflow exception if pop from empty
 */

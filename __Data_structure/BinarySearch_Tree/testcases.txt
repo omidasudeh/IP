@@ -1,0 +1,7 @@
+/*
+    X 0. instantiate a BST
+    X 1. build a BST from an array
+    X 2. find a key in BST
+     3. Insert a key into BST
+     4. Delete a key from BST
+*/

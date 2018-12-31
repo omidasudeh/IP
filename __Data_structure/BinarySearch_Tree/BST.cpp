@@ -235,3 +235,37 @@ pair<TreeNode*,TreeNode*> MyBST::FindMin(TreeNode* parent,TreeNode* current)
     pair<TreeNode*, TreeNode*> r(par,cur);
     return r;
 }
+pair<TreeNode*,TreeNode*> MyBST::FindMax(TreeNode* parent,TreeNode* current)
+{
+    TreeNode* par = parent;
+    TreeNode* cur = current;
+    while(cur->right!=NULL)
+    {
+        par = cur;
+        cur = cur->right;
+    }
+    pair<TreeNode*, TreeNode*> r(par,cur);
+    return r;
+}
+
+TreeNode* MyBST::successor(TreeNode* node)
+{
+    if(node == NULL)
+        return NULL;
+    if(node->right != NULL){
+        return (FindMin(node, node->right).second);
+    }
+    TreeNode* par = NULL;
+    TreeNode* cur = root;
+    TreeNode* succ = NULL;
+    while(cur!=node)
+    {
+        if(cur->Key > node->Key){
+            succ = cur;
+            cur = cur->left;
+        }
+        else
+            cur = cur->right;
+    }
+    return succ;
+}

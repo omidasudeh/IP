@@ -1,7 +1,22 @@
 /*
     X 0. instantiate a BST
     X 1. build a BST from an array
-    X 2. find a key in BST
-     3. Insert a key into BST
-     4. Delete a key from BST
+        - expect null if array is null
+        - expect null if array size <= 0
+    X 2. find
+        - Expect NULL if empty tree
+        - Expect NULL if not found
+        - Expect k  == find(k)->key
+    X 3. Insert a key into BST
+        Insert some elements and for all key k:
+        - Expect k  == find(k)->key
+    X 4. Delete a key from BST
+        - Delete leaf
+        - Delete node with one subtree
+        - Delete node with both subtrees
+        for all Deleted key k:
+        - Expect null  == find(k)->key
+    X 5. successor
+        compute successor for all nodes of the tree and compare it with the actual value
+
 */

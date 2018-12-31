@@ -48,17 +48,12 @@ class MyBST
   void preOrder();
   void postOrder();
 
-  //============ other: min, max, succ, predec ====================
+  //============ other: min, max, successor ====================
   /*
   - find the next inorder element
+  - returns the pair<succ_parent, succ>
   */
   TreeNode* successor(TreeNode*);
-
-  /*
-  - find the previous inorder element
-  */
-  TreeNode* predecessor(TreeNode*);
-
   /*
   - find the min element in the subtree
   */

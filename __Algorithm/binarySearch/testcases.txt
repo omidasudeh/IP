@@ -1,0 +1,9 @@
+/*
+    // 0. Expect length_error exception if 0 size stack instantiated
+    // 1. can instantiate stack
+    // 2. can push to stack
+    // 3. Expect overflow exception if push to full    
+    // 4. can peek,pop from stack
+    // 5. Expect reverse order here    
+    // 6. Expect underflow exception if pop from empty
+*/

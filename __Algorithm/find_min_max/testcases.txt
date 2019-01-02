@@ -1,0 +1,4 @@
+/*
+    // 0. raise a length exception if empty array
+    // 2. run a test for element 0 to n-1 and see if results are correct 
+*/

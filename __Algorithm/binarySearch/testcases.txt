@@ -1,9 +1,5 @@
 /*
-    // 0. Expect length_error exception if 0 size stack instantiated
-    // 1. can instantiate stack
-    // 2. can push to stack
-    // 3. Expect overflow exception if push to full    
-    // 4. can peek,pop from stack
-    // 5. Expect reverse order here    
-    // 6. Expect underflow exception if pop from empty
+    // 0. expect empty array result in not found
+    // 1. expect -1 if not found
+    // 2. run a test for element 0 to n-1 and see if results are correct 
 */

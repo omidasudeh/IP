@@ -1,4 +1,7 @@
 /*
     // 0. raise a length exception if empty array
-    // 2. run a test for element 0 to n-1 and see if results are correct 
+    // 1. test for array with one element 
+    // 2. test for array with two elements 
+    // 3. test for array with even elements
+    // 4. test for array with odd elements
 */

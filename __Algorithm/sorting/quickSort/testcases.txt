@@ -1,0 +1,12 @@
+/*
+    // partition:
+        1.     //expect length exception if array is empty
+        2.     //expect 0 if array size is 1
+        3.     //expect invalid_args exception if array is empty
+        4.     // expect all the elements before the computed pivot <= pivot itself
+               // expect all the elements after the computed pivot >= pivot itself
+    // myQuickSort:
+        1.     //expect length exception if empty array
+        2.     //expect length exception if empty array
+        3.     // expect the array to be sorted
+*/

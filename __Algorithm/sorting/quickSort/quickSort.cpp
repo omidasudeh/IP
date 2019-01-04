@@ -1,8 +1,8 @@
 /*
 Implements randomized quickSort and its testing
  - Recursive:
-    - Space Complexity: O(1)
-    - Time Complexity: O(nlog(n))
+    - Space Complexity: Best:O(log(n)) Average:O(log(n)) worst:O(n)
+    - Time  Complexity: Best:O(nlog(n)) Average:O(nlog(n)) worst:O(n^2)
 */
 #include <gtest/gtest.h>
 #include <iostream>

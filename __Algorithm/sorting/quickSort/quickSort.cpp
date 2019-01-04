@@ -96,7 +96,7 @@ TEST(quickSort, emptyArray){
     ASSERT_THROW(myQSort(arr), std::length_error);
 }
 TEST(quickSort, oneElementArray){
-    //expect length exception if empty array
+    //expect sort of one element equal itself
     vector<int> arr = {1};
     myQSort(arr);
     ASSERT_EQ(arr[0],1);

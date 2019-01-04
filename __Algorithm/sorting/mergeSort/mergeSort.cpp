@@ -1,8 +1,8 @@
 /*
 Implements randomized MergeSort and its testing
  - Recursive:
-    - Space Complexity: best: average: worst:
-    - Time Complexity : best: average: worst:
+    - Space Complexity: best: average: worst:O(n) heap + log(n) stack
+    - Time Complexity : best: average: worst: O(nlogn)
 */
 #include <gtest/gtest.h>
 #include <iostream>

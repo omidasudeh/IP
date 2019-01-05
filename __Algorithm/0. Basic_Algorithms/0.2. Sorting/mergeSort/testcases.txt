@@ -1,0 +1,18 @@
+/*
+    // Merge:
+        1. //expect length exception if array is empty
+        2. //expect sort of one element equal itself        
+        3. //expect invalid_args exception if wrong boundaries
+        4. // 1. Given an even sized array with both halves sorted, merge the first half to the second
+                // 2. Sort another copy of the input with quick sort
+                // 3. expect result of 1. equal to 2.
+                // 4. do the same for odd sized array 
+    // MyMergeSort
+        1. //expect length exception if empty array
+        2. //expect sort of one element equal itself
+        3. // expect the array to be sorted
+                // 1. sort a given even sized array usin mergesort
+                // 2. Sort another copy of the input with quick sort
+                // 3. expect result of 1. equal to 2.
+                // 4. do the same for odd sized array  
+*/

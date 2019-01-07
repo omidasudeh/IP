@@ -3,6 +3,9 @@ Implements randomized kth element ( and specifically median) and its testing
  - Recursive:
     - Space Complexity: best: average:log(n) stack worst:
     - Time Complexity : best: average:O(n) worst: 
+- iterative:
+    - Space Complexity: best: average: worst: O(1)
+    - Time Complexity : best: average:O(n) worst: 
 */
 #include <gtest/gtest.h>
 #include <iostream>
@@ -59,6 +62,20 @@ int Kth_element(vector<int>&array, int left,int right, int k){
     else //if(p<k)
         return Kth_element(array,p+1,right,k);
 }
+int Kth_element_iter(vector<int>&array, int left,int right, int k){
+    if (array.size()<1)
+        __throw_length_error("empty input array!");
+    while(left<=right)
+    {
+        int p = randomizedPartition(array,left,right);
+        if(p == (k-1)) return array[p];//kth element found
+        if(p > k-1)
+            right = p-1;//return Kth_element(array,left,p-1,k);
+        else //if(p<k)
+            left = p+1;//return Kth_element(array,p+1,right,k);
+    }
+    __throw_invalid_argument("invalid left/right arguments passed to the function");
+}
 int Kth_element(vector<int>&array, int k){
     return Kth_element(array, 0, array.size()-1, k);
 }
@@ -95,5 +112,4 @@ TEST(Median, brutal_test){
     for(int k = 1;k<=arrOdd.size();k++){
         ASSERT_EQ(Kth_element(arrOdd,k),arrOdd1[k-1]);
     }
-
 }

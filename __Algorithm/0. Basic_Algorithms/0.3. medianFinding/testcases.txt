@@ -1,18 +1,9 @@
 /*
-    // Merge:
-        1. //expect length exception if array is empty
-        2. //expect sort of one element equal itself        
-        3. //expect invalid_args exception if wrong boundaries
-        4. // 1. Given an even sized array with both halves sorted, merge the first half to the second
-                // 2. Sort another copy of the input with quick sort
-                // 3. expect result of 1. equal to 2.
-                // 4. do the same for odd sized array 
-    // MyMergeSort
-        1. //expect length exception if empty array
-        2. //expect sort of one element equal itself
-        3. // expect the array to be sorted
-                // 1. sort a given even sized array usin mergesort
-                // 2. Sort another copy of the input with quick sort
-                // 3. expect result of 1. equal to 2.
-                // 4. do the same for odd sized array  
+    //a. expect length exception if array is empty
+    //b. expect 0th element if array size is 1
+    //c. brutal_test
+        // 1. get kth element from the kth-element algorithm
+        // 2. get kth element from the sorted version of input array
+        // 3. expect 1. and 2. to be equal
+        // 4. test for both even and odd sized vectors
 */

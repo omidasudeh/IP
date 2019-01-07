@@ -40,7 +40,7 @@ int partition_helper(vector<int>&array, int left,int right){
         __throw_invalid_argument("left should be >= right");
 
 }
-int randomizedpartition_helper(vector<int>&array, int left,int right){
+int randomizedPartition(vector<int>&array, int left,int right){
     int r = rand()%(right-left+1)+left;
     int temp = array[right];
     array[right] = array[r];
@@ -49,7 +49,7 @@ int randomizedpartition_helper(vector<int>&array, int left,int right){
 }
 void myQSort(vector<int>& array, int left, int right){
     if(left<right){ 
-        int p = randomizedpartition_helper(array,left,right);
+        int p = randomizedPartition(array,left,right);
         myQSort(array,left, p-1);
         myQSort(array,p+1, right);
     }

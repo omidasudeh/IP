@@ -6,9 +6,15 @@ __Coding: coding problems
 __Data_structure: implementation/testing of important data structures
 
 __Tutorials_SampleCodes:
+    - sample codes
+    
     - includes my notes in 
       - OOP
+
       - C
+      
       - GPU 
+      
       - Database foundation
+      
       - Deep Learning  

@@ -10,6 +10,8 @@ __Tutorials_SampleCodes:
     - sample codes
 
     - my notes in 
+      - Data Structure
+      
       - OOP
 
       - C

@@ -1,3 +1,19 @@
 /*
     X 0. instantiate a HashMap
+    X 1. insert to a HashMap
+        - insert an item empty and non-empty buckets. Expect to be able to find it
+        - insert to empty bucket ...
+        - insert to non-empty bucket ...
+    X 2. search in a HashMap   
+        - expect not found return null 
+        - expect finding an item that is only item in the bucket
+        - expect finding an item that is head/tail 
+        - expect finding an item that is head/tail/mid 
+    X 3. Delete from a HashMap  
+        Expect an item not found after its deletion
+        - delete an item that is not in the table
+        - delete from middle
+        - delete head
+        - delete tail
+        - delete tail
 */

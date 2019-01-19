@@ -1,0 +1,4 @@
+1. find kth element in an unsorted array => find median
+2. find kth element in two sorted arrray => find median
+3. find kth element in n sorted array ====> find median
+4. find top k

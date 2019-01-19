@@ -1,5 +1,5 @@
 /*
-Good example for corner casrs
+Good example for corner cases
 time: >2h
 
 leetcode 3. Longest Substring Without Repeating Characters

@@ -11,6 +11,11 @@ public:
     {            //01234567890123456789012345678901234567890
         string s ="this is a test! is it? I guess it is not.";
         
+        //0. init a str with a char
+            string longest(1,s[0]);
+        // init a 2d vector
+            vector<vector<bool>> map (s.size(),vector<bool>(s.size(),0));
+
         //1. init
         string s1 (s,5,2); // init as substr
         cout<< s1<<endl;

@@ -44,7 +44,7 @@ void func(mytype mt){ // passing by value and returning by value calls the copy 
 int main(){
     mytype t1(10);
     t1.set1();
-    mytype t2(t1);
+    mytype t2 = t1; // this is not an assignment but an equalent for  mytype t2(t1);
     t2.seti();
     func(t1);
     func(t2);

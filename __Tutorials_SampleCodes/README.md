@@ -11,3 +11,6 @@ https://docs.google.com/document/d/1x-KZv9f8aLYgWxJd7SMIgINv8wRtNrqTezpYq6YI5ic/
 
 Deep Learning Specialization: https://docs.google.com/document/d/1zrYAsKQ9Qd6A8GckDhz5zEldxcwHWjY1RGsmVbXyKV4/edit?usp=sharing
 
+Dynamic Programming:
+- https://people.cs.clemson.edu/~bcdean/dp_practice/
+- 

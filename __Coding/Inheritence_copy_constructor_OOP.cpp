@@ -8,7 +8,10 @@ class mytype{
         mytype(int s):size(s){
             container = new int[size];
         }
-        mytype(const mytype& t):size(t.size){//creating copy constructor
+        // we need to define our own copy constructor since we have dynamic
+        // memory allocation and the default copy constructor does not 
+        // handle dynamic memorys
+        mytype(const mytype& t):size(t.size){ //creating copy constructor
             cout<<"copy constructor called\n";
             container = new int[size];
             for(int i = 0;i<size;i++)
@@ -35,7 +38,7 @@ class mytype{
             delete [] container;
         }
 };
-void func(mytype mt){
+void func(mytype mt){ // passing by value and returning by value calls the copy constructor
     mt.print();
 }
 int main(){

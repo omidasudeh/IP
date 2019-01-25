@@ -1,8 +1,13 @@
+/*
+TODO: this is still not working
+* given the abjad chars and their weight and given a sum number find all subsets that sums up to the sum
+* this is equalant for subset sum problem and also coin changing problem
+*/
 #include <iostream>
 #include <sstream>
 #include <vector>
 using namespace std;
-int abjad_weight(int index){
+int C(int index){
     if(index >=28 || index<0)
         return -1;
     index++;
@@ -17,43 +22,29 @@ void abjad(int M){
     istringstream iss (abj_alpha);
     vector<string> alpha;
     string chr;
-    // int ind;
+    int ind = 0;
     while(iss>>chr){
         alpha.push_back(chr);
-        // cout<<chr<<":"<<abjad_weight(ind)<<endl;
-        // ind++;
+        cout<<chr<<":"<<C(ind)<<endl;
+        ind++;
     }
     //================ compute
-    vector<vector<string>> F;
-    vector<string> zero;
-    zero.push_back("");
-    F.push_back(zero);
-    for(int i = 1;i<=M;i++){
-        vector<string> newSet;
-        for(int j = 0;j<i;j++){
-            if(i-abjad_weight(j)>=0){
-                // cout<<i<<":"<<j<<endl;
-                // F[i] = F[i-abjad_weight(alp)] U alp;
-                for(string item:F[i-abjad_weight(j)]){
-                    string alp = alpha[j];
-                    string s = item+"\t"+alp;
-                    // cout<<s<<endl;
-                    newSet.push_back(s);
-                }
+    vector<vector<bool>> F(alpha.size()+1,vector<bool>(M+1, false));
+    cout<<F.size()<<"*"<<F[0].size()<<endl;
+    for(int i = 1;i<F.size();i++){
+        for(int m = 1;m<=M;m++){
+            if(m%i==0)
+                F[i][m] = true; 
+            else if(C(i-1)<=m){
+                F[i][m] = ((F[i-1][m-C(i-1)])||(F[i-1][m]));    
             }
+            else{
+                F[i][m] = F[i-1][m]; 
+            }
+            cout<<F[i][m]<<" \t";
         }
-        F.push_back(newSet);
+        cout<<endl;
     }
-    //================= output
-    cout<<"result:"<<endl;
-    // for(int i = 0;i<F.size();i++){
-        auto Set = F[F.size()-1];
-        // cout<<i<<endl;
-        for(string s: Set){
-            cout<<s<<endl;
-        }
-    // cout<<"============"<<endl;
-    // }
 }
 int main(int argc, char** argv){
     int M;    

@@ -3,32 +3,30 @@
 #include <iostream>
 using namespace std;
 
-struct node
-{
+struct TreeNode {
     int val;
-    node* left;
-    node* right;
-    node(int v):val(v), left(NULL), right(NULL){;}
-};
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ };
 
-void in(node* t){
-    if(t == NULL) return;
-    vector<node*> stk;
-    stk.push_back(t);
-    node* cur = stk.back();
-    while(cur!= NULL || !stk.empty()){
-        while(cur!=NULL){
-            cur = cur->left;
-            stk.push_back(cur);
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> result;
+        if(root == NULL) return result;
+        vector<TreeNode*> stk;
+        TreeNode* cur = root;
+        while(cur!= NULL || !stk.empty()){
+            while(cur!=NULL){
+                stk.push_back(cur);
+                cur = cur->left;
+            }
+            cur = stk.back();
+            result.push_back(cur->val);
+            stk.pop_back();
+            cur = cur->right;
         }
-        cur = stk.back();
-        cout<<cur->val<<" ";
-
-        stk.pop_back();
-        cur = cur->right;
+        return result;
     }
-}
-int main(){
-    
-    return 0;
-}
+};

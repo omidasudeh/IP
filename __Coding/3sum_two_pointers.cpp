@@ -44,6 +44,7 @@ public:
         for(int i=0;i<nums.size()-2;i++){
             if (i && nums[i - 1] == nums[i]) {
                 // Ensure no duplicates using the same first number
+                // from index 1 skip repeatitive numbers
                 continue;
               }
             int target = -nums[i];
@@ -57,7 +58,7 @@ public:
                     partial.push_back(nums[right]);
                     r.push_back(partial);
                     // Ensure we don't try and reuse the same value for the
-                    // lower while we keep searching for more solutions
+                    // left while we keep searching for more solutions
                     do {
                         ++left;
                       } while (left < right && nums[left - 1] == nums[left]);

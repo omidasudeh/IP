@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "__Coding"
+		},
+		{
+			"path": "__Data_structure"
+		},
+		{
+			"path": "__Algorithm"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"ostream": "cpp"
+		}
+	}
+}

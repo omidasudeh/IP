@@ -1,0 +1,38 @@
+// func (root, min, max);
+             10
+            /   \
+           5     12
+          / \   / \
+         4   7 11  15 
+
+min 6, max 11
+
+     10
+     / \
+    7  11
+
+struct{
+int val; 
+node* left;
+node* right;
+};
+
+void f(node* root, int min, int max){
+    if(root == 0)
+        return;
+    
+    
+    root->left = f(root->left, ...)
+    root->right = f(root->right,...)
+    
+    if (root->val < min)
+      return root->right;
+     if (root->val < max)
+      return root->left; 
+  
+    // min< val<max    
+    if(root->val > min && root->val<max ){
+            f(root->left, min, root->val);
+    f(root->right, root->val, max);  
+    }
+}

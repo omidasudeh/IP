@@ -14,7 +14,7 @@ Output:
   [3,2,1]
 ]
 */
-// approach 1: uses c++ insert function
+// approach 1: uses c++ insert function   O(n!) time and space
 class Solution {
 public:
     vector<vector<int>> permute(vector<int>& nums) {
@@ -43,5 +43,31 @@ public:
             }
         }
         return ans;
+    }
+};
+// approach 2 swap based
+class Solution {
+public:
+    vector<vector<int> > permute(vector<int> &num) {
+        vector<vector<int> > result;
+        permuteRecursive(num, 0, result);
+        return result;
+    }
+ 
+    // permute num[begin..end]
+    // invariant: num[0..begin-1] have been fixed/permuted
+    void permuteRecursive(vector<int> &num, int begin, vector<vector<int> > &result)    {
+        if (begin == num.size()) {
+            // one permutation instance
+            result.push_back(num);
+            return;
+        }
+ 
+        for (int i = begin; i < num.size(); i++) {
+            swap(num[begin], num[i]);
+            permuteRecursive(num, begin + 1, result);
+            // reset
+            swap(num[begin], num[i]);
+        }
     }
 };

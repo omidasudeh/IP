@@ -1,6 +1,6 @@
 all: code
 .PHONY : clean 
 code: 
-	g++ simple_calculator_stack.cpp  -lgtest -lgtest_main -pthread
+	g++ merge_interval_set.cpp  -lgtest -lgtest_main -pthread
 clean:
 	rm -rf *.o *.out 

@@ -50,15 +50,15 @@ public:
         for(i; i<s.size();i++){
             char ch = s[i];
             if(map.find(ch) != map.end()){//if repeatetive  
-                if(map[ch]>= start) {
+                if(map[ch]>= start) {//case 1
                     max = ((i-start)>max)?(i-start):max;// update max
                     start = map[ch]+1;
                 }
-                else{
+                else{ //case 2
                     max = ((i-start+1)>max)?(i-start+1):max;// update max
                 }
             }
-            map[ch] = i;
+            map[ch] = i; // case 3
         }
         max = ((i-start)>max)?(i-start):max;// update max
         return max;        

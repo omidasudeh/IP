@@ -41,12 +41,44 @@ private:
 public:
     LRUCache(int c):capacity(c), count(0), head(0), tail(0){
     }
-    
     int get(int key) {
-        if(map.find(key) == map.end())
+        if(map.find(key) == map.end()){
             return -1;
-        else
-            return map[key]->val;
+        }
+        else{
+            //set it as head as it is touched
+            node* t = map[key];
+            if(t == head){
+                //do nothing
+            }
+            else if(t == tail){ 
+                if (tail->next == head){
+                    head = tail;
+                    tail = tail->next;
+                    tail->previous = 0;
+                    head->next = 0;
+                    tail->next = head;
+                    head->previous = tail;
+                }
+                else{
+                    head->next = tail;
+                    tail->previous = head;
+                    node* a  = tail->next;
+                    head = tail;
+                    tail = a;
+                    tail->previous = 0;
+                    head->next = 0;
+                }
+            }
+            else{
+                t->next->previous = t->previous;
+                t->previous->next = t->next;
+                head->next = t;
+                t->previous = head;
+                head = t;
+            }
+            return t->val;
+        }
     }
     void put(int key, int value) { 
         // add to head
@@ -62,21 +94,28 @@ public:
                     head->next = t;
                     head = t;
                 }
+                if(tail == 0)
+                    tail = t;
                 //2. update the map
                 map[key] = t;
+                count++;
             }
             else{                           //if already exists: add it to the head of the list; no need to update the map
                 //1. take the existed occurance; 
                 //2. insert it to the head
                 node* t = map[key];
+                t->val = value;
                 if(t == head){
                     //do nothing
                 }
                 else if(t == tail){ 
                     if (tail->next == head){
-                        node* a  = head;
                         head = tail;
-                        tail = a;
+                        tail = tail->next;
+                        tail->previous = 0;
+                        head->next = 0;
+                        tail->next = head;
+                        head->previous = tail;
                     }
                     else{
                         head->next = tail;
@@ -116,14 +155,18 @@ public:
                 //1. take the existed occurance; 
                 //2. insert it to the head
                 node* t = map[key];
+                t->val = value;
                 if(t == head){
                     //do nothing
                 }
                 else if(t == tail){ 
                     if (tail->next == head){
-                        node* a  = head;
                         head = tail;
-                        tail = a;
+                        tail = tail->next;
+                        tail->previous = 0;
+                        head->next = 0;
+                        tail->next = head;
+                        head->previous = tail;
                     }
                     else{
                         head->next = tail;

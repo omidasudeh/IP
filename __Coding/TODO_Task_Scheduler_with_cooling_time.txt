@@ -1,2 +1,0 @@
-//Given a sequence of events and a cooling time k, what is the min length schedule?
-//example: aaabbc, k = 3  abc-ab--a 

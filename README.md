@@ -1,4 +1,4 @@
-# Interview_practice
+# IP has reviews for
 __Algorithm: implementation/testing of important algorithms
 
 __Coding: coding problems

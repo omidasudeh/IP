@@ -106,4 +106,48 @@ public:
         
         return f[m][n];
     }
+        int minEditDistanceLinearSpace(string word1, string word2) {
+        /*      
+            space can be improved to O(min(m,n)) by only keeping previous row
+        */
+        int m = word1.size();
+        int n = word2.size();
+        if(m == 0)
+            return n;
+         if(n == 0)
+            return m;
+        if(m<n){
+            swap(m,n);
+            swap(word1,word2);
+        }
+        vector<int> f(vector<int>(n+1,0));
+        
+        //set boundary
+        for(int i = 0;i<=n;i++){
+            f[i] = i;
+        }
+        // set recursion
+        for(int i = 1;i<=m;i++){
+
+            f[0] = i;
+            int fi_1j_1 = i-1;
+            for(int j = 1;j<=n;j++){
+                if(word1[i-1]==word2[j-1]){
+                    int t = f[j];
+                    f[j] = fi_1j_1;
+                    fi_1j_1 = t;
+                }
+                else{
+                    int t = fi_1j_1;
+                    fi_1j_1 = f[j];
+                    f[j] = min(1+f[j],  //add
+                                min(1+f[j-1],  //remove    o.w.
+                                    1+t) //replave
+                        );
+                }
+            }
+
+        }
+        return f[n];
+    }
 };

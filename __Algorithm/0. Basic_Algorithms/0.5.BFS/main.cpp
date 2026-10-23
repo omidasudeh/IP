@@ -2,7 +2,7 @@
 #include <unordered_set>
 #include <queue>
 using namespace std;
-// dfs and topological sort
+// bfs and level order
 class solution{
     private:
     unordered_set<int> visited;

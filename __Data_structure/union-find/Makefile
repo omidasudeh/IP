@@ -2,10 +2,10 @@
 CXX = clang++
 CXXFLAGS = -std=c++17 -Wall -g
 
-all: main
+all: unionFind
 
-main: main.o
-	$(CXX) -o main main.o
+unionFind: unionFind.o
+	$(CXX) -o unionFind unionFind.o
 
 clean:
-	rm -f main main.o
+	rm -f unionFind unionFind.o
